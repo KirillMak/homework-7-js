@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/Header/'
-//import './components/Post';
+import Header from './components/Header/';
+import PokemonCard from './components/PokemonCard/'
+import PokemonRow from './components/PokemonRow';
+//import 'jquery';
 
 
 class App extends Component{
@@ -9,6 +11,7 @@ class App extends Component{
         return(
             <div>
                 <Header />
+                <PokemonRow />
             </div>
         );
     }

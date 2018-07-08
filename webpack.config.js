@@ -79,6 +79,10 @@ module.exports = {
         new ExtractTextPlugin({filename: 'styles.css'}),
         new HtmlWebpackPlugin({
             template: './src/index.html'
-          })
+          }),
+        /*new webpack.ProvidePlugin({
+          '$': 'jquery',
+          'jQuery': 'jquery'
+        })*/
     ]  
 }
