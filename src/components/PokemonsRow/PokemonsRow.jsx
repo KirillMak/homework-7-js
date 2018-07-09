@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import {Grid,Row,Col} from 'react-bootstrap';
 import PokemonCard from '../PokemonCard';
 
-export default class PokemonRow extends Component {
+export default class PokemonsRow extends Component {
     render(){
         return (
                 <Grid>

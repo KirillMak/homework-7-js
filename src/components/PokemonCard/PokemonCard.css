@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     background: rgba(240,240,240,0.5);
+    border-radius: 2%;
 }
 
-.pokemonCard > div > img {
+.pokemonCard > div  img {
     width: 100%;
 }

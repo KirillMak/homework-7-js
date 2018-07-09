@@ -1,31 +1,29 @@
 import React , { Component } from 'react';
 import {Navbar,Nav,NavItem,MenuItem,NavDropdown} from 'react-bootstrap';
 import './Header.css';
+import {Link} from 'react-router-dom';
 export default class Header extends Component {
     render(){
         return (
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                    <a href="#home">React-Bootstrap</a>
+                        <a href="/">Pokedex</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
-                    <NavItem eventKey={1} href="#">
-                    Link
+                    <NavItem eventKey={1}>
+                        <Link to = "/caughtPokemons" >
+                            Caught Pokemons
+                        </Link>
                     </NavItem>
-                    <NavItem eventKey={2} href="#">
-                    Link
+                    <NavItem eventKey={2} href="https://www.pokemon.com/ru/">
+                        More about Pokemons
                     </NavItem>
-                    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                    <MenuItem eventKey={3.1}>Action</MenuItem>
-                    <MenuItem eventKey={3.2}>Another action</MenuItem>
-                    <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                    <MenuItem divider />
-                    <MenuItem eventKey={3.4}>Separated link</MenuItem>
-                    </NavDropdown>
                 </Nav>
             </Navbar>
         );
     }
 }
+
+//href="/caughtPokemons"

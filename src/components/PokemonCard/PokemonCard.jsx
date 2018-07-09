@@ -1,18 +1,23 @@
 import React , { Component } from 'react';
-import './PokemonCard.css'
+import './PokemonCard.css';
+import ButtonCatch from '../../containers/ButtonCatch';
+import Pokemon from '../Pokemon';
+import {Link} from 'react-router-dom';
 
 export default class PokemonCard extends Component {
 
     render(){
+        
+        
         const {id, name, source, status} = this.props;
+       
         return(
         <div className = "pokemonCard">
-            <div> ID : {id} </div>
-            <div> Name : {name} </div>
+            <Pokemon id = {id} name = {name}/>
             <div> 
-                <img src = {source} />
+                <Link to = {`/pokemon/${id}`}> <img src = {source} /></Link>
              </div>
-            <button>Catch</button>
+            <ButtonCatch pokemonId = {id} />
         </div>
         )
     }
