@@ -5,7 +5,6 @@ export default class Pokemon extends Component {
 
     render(){
         
-        
         const {id, name, source, status} = this.props;
        
         return(

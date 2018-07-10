@@ -18,13 +18,13 @@ export default class ButtonCatch extends Component{
         //console.log("Click");
         //console.log(this.state.isCaught);
 
-        fetch('http://localhost:3000/caughtPokemons', {
+        fetch('http://localhost:3000/caught', {
         method: 'post',
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({pokemonId: this.props.pokemonId})
+        body: JSON.stringify({pokemonId: this.props.pokemonId , dateCaught: (new Date()).toLocaleString({year: 'numeric',month:'numeric',year:'numeric'})})
         }).then(res=>res.json())
         .then(res => console.log(res));
 

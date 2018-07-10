@@ -4,36 +4,23 @@ import {BrowserRouter, Switch,Route } from 'react-router-dom';
   
 import Header from './components/Header/';
 import PokemonCard from './components/PokemonCard/'
-import PokemonsRow from './components/PokemonsRow';
 import PokemonPage from './components/PokemonPage';
 import Pokemons from './containers/Pokemons';
 import {Fragment} from 'react';
-//import 'jquery';
+import GetPokemon from './containers/GetPokemon';
+
 
 
 class App extends Component{
     
     render(){
-        
-
-            /*.then(function(data) {
-                    let pokemons = data.results; // Get the results
-                    return pokemons.map(function(author) { 
-
-                })*/
-       
-            
         return(
             <Fragment>
                 <Header />
                 <Switch>
-                    <Route exact path='/' >
-                        <Pokemons collection = "pokemons"/>
-                    </Route>
-                    <Route path='/pokemon/:id' component={PokemonPage} />     
-                    <Route exact path='/caughtPokemons' >
-                        <Pokemons collection = "caughtPokemons"/>
-                    </Route>
+                    <Route exact path='/' render={(props)=><Pokemons collection = "pokemons" {...props}/>} />
+                    <Route path='/pokemon/:id' component={GetPokemon} />     
+                    <Route path='/caughtPokemons' render={(props)=><Pokemons collection = "caught" {...props}/>} />
                 </Switch>
             </Fragment>
         );
@@ -42,4 +29,3 @@ class App extends Component{
 
 ReactDOM.render((<BrowserRouter><App/></BrowserRouter>), document.getElementById('app'));
 
-//<Route exact path='/caughtPokemons/' component = {Pokemons} />
