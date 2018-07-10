@@ -33,8 +33,6 @@ export default class GetPokemon extends Component{
     
     componentDiDMount = () => {
         this.loadPokemon();
-          //console.log(`текущее состояние: ${this.state}`);
-          //console.log(this.state);
     }
     render(){
         

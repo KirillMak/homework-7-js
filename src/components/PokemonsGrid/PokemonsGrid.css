@@ -8,3 +8,15 @@
     list-style-type: none;
     margin:2%;
 }
+
+main {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loadMore {
+    min-width:20%;
+    margin:2%;
+    color: rgba();
+}

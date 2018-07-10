@@ -6,12 +6,11 @@ import './PokemonPage.css';
 export default class PokemonPage extends Component{
     render(){
         const {pokemonInfo} = this.props;
-        //const {id , name} = pokemon;
         const {id , name,caught} = pokemonInfo;
         const status = caught.length !== 0 ? 'Has caught' : 'Hasn\'t caught';
         const dateCaught = caught.length !== 0 ? caught[0].dateCaught : '-';
-        console.log(pokemonInfo);
-        //console.log( this.props);
+        //console.log(pokemonInfo);
+       
         return(
             <div className = "PokemonPage">
                 <div className = "PokemonPage__item">
