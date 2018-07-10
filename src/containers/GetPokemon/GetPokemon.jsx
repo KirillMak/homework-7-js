@@ -6,34 +6,41 @@ export default class GetPokemon extends Component{
     constructor(props){
         super(props);
         this.state = {
-            pokemon: []
+            pokemon: null
         }
+        this.loadPokemon();
     }
 
-    componentDidMount = () => {
+
+    loadPokemon = () => {
         const id = this.props.match !== undefined ? this.props.match.params.id : 0 ;
         const {pokemon} = this.state;
         fetch(`http://localhost:3000/pokemons/${id}?_embed=caught`)
         .then((response) => response.json())
         .then((result) => {
                     //console.log(Array(result));
-                    this.setState((prevState)=>({
-                        pokemon: prevState.pokemon.concat(Array(result))
-                    }))
-                    console.log(this.state.pokemon[0]);
+                    this.setState({
+                        pokemon: result //prevState.pokemon.concat(Array(result))
+                    })
+                   // console.log(this.state.pokemon[0]);
             })
         
         .catch(function(error) {
             console.log(error);
           });
+    }
 
+    
+    componentDiDMount = () => {
+        this.loadPokemon();
           //console.log(`текущее состояние: ${this.state}`);
           //console.log(this.state);
     }
     render(){
         
+        let {pokemon} = this.state;
         return(
-            <PokemonPage pokemonInfo = {this.state.pokemon[0]}/>
+            pokemon ? <PokemonPage pokemonInfo = {this.state.pokemon}/> : null
         )
     }
         
