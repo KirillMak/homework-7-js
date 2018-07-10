@@ -38,7 +38,7 @@ export default class GetPokemon extends Component{
     }
     render(){
         
-        let {pokemon} = this.state;
+        const {pokemon} = this.state;
         return(
             pokemon ? <PokemonPage pokemonInfo = {this.state.pokemon}/> : null
         )
